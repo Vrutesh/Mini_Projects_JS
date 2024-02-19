@@ -79,13 +79,16 @@ function backStep() {
     if (currentStep === 4) {
       step_4.classList.remove("active");
       currentStep = 3;
+      message.innerText = "Step 3";
     } else if (currentStep === 3) {
       step_3.classList.remove("active");
       currentStep = 2;
+      message.innerText = "Step 2";
       backwardBtn_Steps(step_3, "3");
     } else if (currentStep === 2) {
       step_2.classList.remove("active");
       currentStep = 1;
+      message.innerText = "Step 1";
       backwardBtn_Steps(step_2, "2");
     }
   });
