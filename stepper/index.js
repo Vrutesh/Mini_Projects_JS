@@ -51,7 +51,7 @@ function once_Submit() {
   reset_btn.style.background = "";
   forward_btn.disabled = true;
   backward_btn.disabled = true;
-  reset_btn.disabled = false;
+  reset_btn.style.display = "inline-block";
 }
 
 function done_Icon(step) {
@@ -124,7 +124,7 @@ resetStep();
 
 // default reset
 function beforeReset() {
-  reset_btn.style.background = "gray";
+  reset_btn.style.display = "none";
 }
 
 beforeReset();
