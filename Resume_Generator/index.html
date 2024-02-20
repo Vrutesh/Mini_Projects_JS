@@ -1,13 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume Generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Resume Generator</h1>
+    <h1 class="title-heading">RESUME GENERATOR</h1>
+    <section class="personal-info">
+        <h1 class="heading"><img src="assets/sparkle.svg" alt="" srcset="">PERSONAL INFORMATION</h1>
+        <div class="line"></div>
+        <form action="">
+            <div class="basic-info">
+                <div class="material-textfield">
+                    <input type="text" class="input-field" placeholder="Name" required>
+                    <label for="name" class="label">Name</label>
+                </div>
+                <div class="material-textfield">
+                    <input type="email" class="input-field" placeholder="Email" required>
+                    <label for="email" class="label">Email</label>
+                </div>
+                <div class="material-textfield">
+                    <input type="number" class="input-field" placeholder="Phone Number" required>
+                    <label for="phone number" class="label">Phone Number</label>
+                </div>
+                <div class="material-textfield">
+                    <input type="text" class="input-field" placeholder="Location" required>
+                    <label for="" class="label">Location</label>
+                </div>   
+                <div class="material-textfield">
+                    <input type="text" class="input-field" placeholder="Linkedin URL">
+                    <label for="" class="label">Linkedin URL</label>
+                </div>
+                
+                <div class="material-textfield">
+                    <input type="text" class="input-field" placeholder="Github URL">
+                    <label for="" class="label">Github URL</label>
+                </div>
+                <div class="material-textfield">
+                    <input type="text" class="input-field" placeholder="Nationality">
+                    <label for="" class="label">Nationality</label>
+                </div>
+                <div class="material-textfield">
+                    <input type="date" class="input-field" placeholder="DOB">
+                </div>
+            </div>
+        </form>
+    </section>
+
+<!-- -----------------------------------summary section---------------------------------- -->
+
+<section class="summary-info">
+    <h1 class="heading"><img src="assets/sparkle.svg" alt="">SUMMARY</h1>
+    <div class="line"></div>
+    <form action="">
+        <div class="about-info">
+            <div class="material-textfield">
+                <textarea name="" id="description" cols="90" rows="6" placeholder="Introduce yourself by pitching your skills & explaining how they can be of value to a company"></textarea>
+
+            </div>
+        </div>
+    </form>
+</section>
+
+
+<!-- -----------------------------------education section---------------------------------- -->
+
+    <section class="education-info">
+        <h1 class="heading"><img src="assets/sparkle.svg" alt="">EDUCATION</h1>
+        <div class="line"></div>
+        <form action="">
+            <div class="qualification-info">
+                <div class="material-textfield">
+                    <input type="text" class="input-field" placeholder="Degree" required>
+                    <label for="name" class="label">Degree</label>
+                </div>
+                <div class="material-textfield">
+                    <input type="text" class="input-field" placeholder="College Name" required>
+                    <label for="name" class="label">College Name</label>
+                </div>
+                <div class="material-textfield">
+                    <input type="text" class="input-field" placeholder="CGPA/Percent" required>
+                    <label for="name" class="label">CGPA/Percent</label>
+                </div>
+                <div class="material-textfield">
+                    <input type="text" class="input-field" placeholder="Year of Passing">
+                    <label for="" class="label">Year of Passing</label>
+                </div>   
+            </div>
+        </form>
+    </section>
+
+    <!-- -----------------------------------certification section---------------------------------- -->
+
+    <section class="certification-info">
+        <h1 class="heading"><img src="assets/sparkle.svg" alt="">CERTIFICATION / COURSES</h1>
+        <div class="line"></div>
+        <form action="">
+            <div class="course-info">
+                <div class="material-textfield">
+                    <input type="text" class="input-field" placeholder="Certification Name">
+                    <label for="name" class="label">Certification Name</label>
+                </div>
+                <div class="material-textfield">
+                    <input type="text" class="input-field" placeholder="Institute">
+                    <label for="name" class="label">Institute</label>
+                </div>
+                <div class="material-textfield">
+                    <textarea name="" id="description" cols="50" rows="6" placeholder="Describe about the project"></textarea>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <!-- -----------------------------------Experience section---------------------------------- -->
+
+    <section class="experience-info">
+        <h1 class="heading"><img src="assets/sparkle.svg" alt="">WORK EXPERIENCE</h1>
+        <div class="line"></div>
+        <form action="">
+            <div class="experience-content">
+                <div class="material-textfield">
+                    <input type="text" class="input-field" placeholder="Job Title" required>
+                    <label for="name" class="label">Job Title</label>
+                </div>
+                <div class="material-textfield">
+                    <label for="">Start Date</label>
+                    <input type="date" class="input-field" placeholder="DOB">
+                </div>
+                <div class="material-textfield">
+                    <label for="">End Date</label>
+                    <input type="date" class="input-field" placeholder="DOB">
+                </div>
+                <div class="material-textfield">
+                    <textarea name="" id="description" cols="50" rows="6" placeholder="Describe your role & achievements"></textarea>
+                </div>
+                
+            </div>
+        </form>
+    </section>
+
+    <!-- -----------------------------------declaration section---------------------------------- -->
+
+<section class="declaration-info">
+    <h1 class="heading"><img src="assets/sparkle.svg" alt="">DECLARATION</h1>
+    <div class="line"></div>
+    <form action="">
+        <div class="declaration-content">
+            <div class="material-textfield">
+                <textarea name="" id="description" cols="90" rows="6" placeholder="DECLARATION"></textarea>
+
+            </div>
+        </div>
+    </form>
+</section>
+
+    <!-- -----------------------------------generate section---------------------------------- -->
+
+    <button class="generate-btn">Generate CV</button>
+
+    <!-- -----------------------------------result section---------------------------------- -->
+
+    <div id="result"></div>
+
     <script src="index.js"></script>
 </body>
+
 </html>
