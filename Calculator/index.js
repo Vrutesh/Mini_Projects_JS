@@ -1,15 +1,25 @@
-function clear_Display() {
-    document.getElementById("display").value = "";
-}
-let buttons = document.getElementsByTagName("button").value
+let display = document.getElementById("display");
+let buttons = document.querySelectorAll(".button");
+let clear = document.querySelector(".clear");
 
-function appendtoDisplay(){
-    // buttons.forEach(button => {
-        console.log(buttons)
-        // button.value = document.getElementById("display")
-    // });
-}
+let arr = Array.from(buttons);
 
-function calculate(){
-    
-}
+let string = "";
+
+arr.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    if (e.target.innerHTML == "=") {
+      string = eval(string);
+      display.value = string;
+    } else if (e.target.innerHTML == "AC") {
+      string = "";
+      display.value = string;
+    } else if (e.target.innerHTML == "C") {
+      string = string.substring(0, string.length - 1);
+      display.value = string;
+    } else {
+      string += e.target.innerHTML;
+      display.value = string;
+    }
+  });
+});
