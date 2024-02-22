@@ -229,10 +229,33 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     declaration_line.style.display = "inline-block";
   }
+
+
 });
 
+
 let print_btn = document.querySelector(".print-btn");
+
+
+let summary_heading = document.querySelector(".summary-heading")
+let experience_heading = document.querySelector(".experience-heading")
+let education_heading = document.querySelector(".education-heading")
+let project_heading = document.querySelector(".project-heading")
+let course_heading = document.querySelector(".course-heading")
+let skill_heading = document.querySelector(".skill-heading")
+let declaration_heading = document.querySelector(".declaration-heading")
+
+
+if(summary_heading == "" || experience_heading == "" || education_heading == "" || project_heading == "" || course_heading == "" || skill_heading == "" || declaration_heading == ""){
+  print_btn.style.display = 'none'
+}
+else{
+  print_btn.style.display = 'block'
+}
+
+
 print_btn.addEventListener("click", () => {
-  window.print();
   print_btn.style.display = "none";
+  window.print();
 });
+

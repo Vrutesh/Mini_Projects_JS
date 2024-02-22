@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+  font-family: "Raleway", sans-serif;
 }
 
 body {
@@ -48,7 +49,7 @@ body {
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
-  max-width: 60vw;
+  max-width: 53vw;
 }
 
 .summary-detail {
@@ -161,7 +162,6 @@ body {
   justify-content: flex-end;
 }
 
-
 .print-btn {
   align-items: center;
   background-color: #1976d2;
@@ -196,5 +196,10 @@ body {
   transform: scale(1);
 }
 
-
-
+@media print {
+  @page {
+    /* Remove the filename */
+    /* You can also set the page size, margins, and other print settings here */
+    margin: 0; /* Example: Set margin to 0 */
+  }
+}
