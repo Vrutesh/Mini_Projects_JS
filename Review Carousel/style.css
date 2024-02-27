@@ -1,0 +1,116 @@
+/* Define scrollbar width and color variables */
+:root {
+  --scrollbar-width: 4px;
+  --scrollbar-color: #333;
+}
+
+/* Style for the scrollbar track */
+::-webkit-scrollbar {
+  display: none;
+  width: var(--scrollbar-width);
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  display: none;
+  background-color: #787878; /* Make scrollbar track transparent */
+}
+
+/* Style for the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-color);
+  border-radius: 10px; /* Make the scrollbar thumb rounded */
+}
+
+/* Style for the scrollbar corner */
+::-webkit-scrollbar-corner {
+  background-color: transparent; /* Hide the scrollbar corner */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.carousel {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  background-color: rgb(210, 212, 212);
+}
+
+.slide {
+  display: inline-block;
+  width: 100%; /* Set width of each slide */
+  height: 650px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin: 0;
+  padding: 0;
+}
+
+.slide {
+  display: none;
+}
+
+/* Show the active slide */
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.message {
+  width: 60px;
+  padding: 20px 20px 0 20px;
+}
+
+.slide h2 {
+  text-align: center; /* Center heading */
+}
+
+.slide p {
+  text-align: justify; /* Justify text */
+  margin-top: 10px; /* Add margin above paragraph */
+  white-space: normal;
+}
+
+.slide .user {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.buttons img {
+  width: 40px;
+  color: springgreen;
+  background-color: #d7d5d5;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 20px;
+  padding: 0;
+  transition: 0.5s;
+}
+
+.buttons img:hover {
+  transform: scale(1.12);
+}
+
+.buttons img:active {
+  transform: scale(0.8);
+}
