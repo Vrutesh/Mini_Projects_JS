@@ -18,6 +18,10 @@ The Calculator project is a basic calculator application that performs arithmeti
 
 The Tic Tac Toe project is a classic game implemented using JavaScript. Players take turns marking spaces in a 3x3 grid, aiming to be the first to form a line of three of their symbols. This project emphasizes logic and algorithm implementation.
 
+## 5. Carousel
+
+The Carousel project is a dynamic image slider built with JavaScript, HTML, and CSS. Users can navigate through a series of images or content sections using arrow buttons or automatic sliding. This project enhances understanding of DOM manipulation and animation techniques.
+
 Feel free to explore each project's directory for more details and dive into the code to understand how they were implemented.
 
 ## Usage
