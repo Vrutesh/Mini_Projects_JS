@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+  font-family:'Times New Roman', Times, serif;
 }
 
 body {
@@ -50,4 +51,20 @@ body {
   background-color: #fff;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 10px 13px 0px;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    background-color: lightgreen;
+  }
+  .info {
+    width: 90vw;
+    font-size: 0.85rem;
+  }
+  
+  .faq-content {
+    width: 90vw;
+    font-size: 0.92rem;
+    line-height: 1.3rem;
+  }
 }
