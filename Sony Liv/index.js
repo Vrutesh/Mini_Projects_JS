@@ -37,10 +37,10 @@ const previous_Slide = () => {
   }
 
   if (currentSlide === 0) {
-  previous_btn.style.opacity = "0.5";
-  previous_btn.style.cursor = "not-allowed";
-  previous_btn.removeEventListener("click", previous);
-}
+    previous_btn.style.opacity = "0.5";
+    previous_btn.style.cursor = "not-allowed";
+    previous_btn.removeEventListener("click", previous);
+  }
 };
 
 const next = () => {
@@ -62,58 +62,92 @@ if (currentSlide === 0) {
   previous_btn.removeEventListener("click", previous);
 }
 
-
-// fetch data 
+// fetch data
 const API_KEY = "f3fbd38c0c00cefd4bd7ffeb48aa7a17";
 const API_URL = "https://api.themoviedb.org/3/movie/";
 const TV_API_URL = "https://api.themoviedb.org/3/tv/";
 
 const upcomingCards = document.querySelectorAll(".upcoming img");
-// const backdrops = document.querySelectorAll(".slide img");
+const backdrops = document.querySelectorAll(".slide img");
+// const overview = document.querySelector('.overview')
 const trendingCards = document.querySelectorAll(".trending img");
 const latestMovieCards = document.querySelectorAll(".latest img");
 
 const upcomingURL = `${API_URL}upcoming?language=en-US&page=1&region=IN&api_key=${API_KEY}`;
+const popularURL = `${API_URL}popular?language=en-US&page=1&region=IN&api_key=${API_KEY}`;
 const latestURL = `${API_URL}now_playing?language=en-US&page=1&region=IN&api_key=${API_KEY}`;
 const tvURL = `${TV_API_URL}popular?language=en-US&page=1&region=IN&api_key=${API_KEY}`;
 
+//upcoming movies data
+
 fetch(upcomingURL)
-  .then(response => {
+  .then((response) => {
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error("Network response was not ok");
     }
     return response.json();
   })
-  .then(upcomingData => {
+  .then((upcomingData) => {
     // Handle upcoming data
     const upcomingMovies = upcomingData.results;
 
     upcomingMovies.forEach((movie, index) => {
-        if (movie && movie.poster_path && movie.backdrop_path) {
-          const imageURL = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
-          upcomingCards[index].src = imageURL;
-        //   const backdropURL = `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`;
-        //   backdrops[index].src = backdropURL;
-        } else {
-          // Hide the card if the image URL is null or undefined
-          upcomingCards[index].style.display = "none";
-        //   backdrops[index].style.display ='none'
-        }
-      });
-      
+      if (movie && movie.poster_path) {
+        const imageURL = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+        upcomingCards[index].src = imageURL;
+      } else {
+        // Hide the card if the image URL is null or undefined
+        upcomingCards[index].style.display = "none";
+      }
+    });
   })
-  .catch(error => {
-    console.error('There was a problem with the fetch operation:', error);
+  .catch((error) => {
+    console.error("There was a problem with the fetch operation:", error);
   });
 
-fetch(latestURL)
-  .then(response => {
+//slider movies data
+
+fetch(popularURL)
+  .then((response) => {
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error("Network response was not ok");
     }
     return response.json();
   })
-  .then(latestMoviesData => {
+  .then((popularData) => {
+    // Handle popular data
+    const popularMovies = popularData.results;
+    
+    popularMovies.forEach((movie, index) => {
+      if (movie && movie.backdrop_path && movie.overview) {
+        const backdropURL = `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`;
+        backdrops[index].src = backdropURL;
+        
+        // Select the correct overview element for this movie
+        const overviewElement = document.querySelectorAll('.overview')[index];
+        overviewElement.innerHTML = movie.overview;
+      } else {
+        // Hide the slide if the image URL is null or undefined
+        backdrops[index].style.display = "none";
+      }
+    });
+  })
+  .catch((error) => {
+    console.error("There was a problem with the fetch operation:", error);
+  });
+
+
+
+//latest movies data
+
+fetch(latestURL)
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    return response.json();
+  })
+  .then((latestMoviesData) => {
     // Handle upcoming data
     const latestMovies = latestMoviesData.results;
 
@@ -124,18 +158,20 @@ fetch(latestURL)
       }
     });
   })
-  .catch(error => {
-    console.error('There was a problem with the fetch operation:', error);
+  .catch((error) => {
+    console.error("There was a problem with the fetch operation:", error);
   });
 
+//tv series data
+
 fetch(tvURL)
-  .then(response => {
+  .then((response) => {
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error("Network response was not ok");
     }
     return response.json();
   })
-  .then(tvData => {
+  .then((tvData) => {
     // Handle trending data
     const tvSeries = tvData.results;
 
@@ -146,8 +182,6 @@ fetch(tvURL)
       }
     });
   })
-  .catch(error => {
-    console.error('There was a problem with the fetch operation:', error);
+  .catch((error) => {
+    console.error("There was a problem with the fetch operation:", error);
   });
-
-
