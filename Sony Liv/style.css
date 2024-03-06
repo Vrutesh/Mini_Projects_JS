@@ -1,3 +1,4 @@
+/* Reset styles */
 * {
   margin: 0;
   padding: 0;
@@ -6,27 +7,27 @@
   font-family: "Noto Sans", sans-serif;
 }
 
-/* Track */
+/* Scrollbar styles */
 ::-webkit-scrollbar {
-  width: 10px; /* width of the scrollbar */
-  background: #333; /* color of the track */
+  width: 10px;
+  background: #333;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #535353; /* color of the handle */
-  border-radius: 5px; /* roundness of the handle */
+  background: #535353;
+  border-radius: 5px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #888; /* color of the handle on hover */
+  background: #888;
 }
 
+/* Body styles */
 body {
   background-color: #000000;
 }
 
+/* Navigation styles */
 .nav-container {
   width: 100%;
   height: 3.125em;
@@ -41,17 +42,16 @@ body {
 }
 
 .nav-logo {
-  color: #fff;
   display: flex;
   align-items: center;
-  margin: 0 0 0 40px;
+  margin-left: 40px;
 }
 
 .vertical-line {
   width: 1px;
   height: 25px;
   background-color: #848484;
-  margin: 0 0 0 20px;
+  margin-left: 20px;
 }
 
 .nav-logo > button {
@@ -117,7 +117,6 @@ body {
 }
 
 .nav-profile {
-  height: 100%;
   display: flex;
   flex-flow: row;
   justify-content: flex-end;
@@ -139,23 +138,23 @@ body {
   cursor: pointer;
 }
 
-/* hero section */
+/* Hero section */
 .container {
   width: 100%;
   height: 100vh;
   margin-bottom: 60px;
+  position: relative; /* Added position relative */
 }
 
 .carousel {
   width: 100%;
-  overflow-x: auto; /* Keep horizontal scrolling */
-  overflow-y: hidden; /* Prevent vertical scrolling */
-  display: flex; /* Let slides behave like flex items */
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
 }
 
 .masthead-gradient {
   position: absolute;
-  display: block;
   width: 100%;
   height: calc(40.625% - 39px);
   background-image: linear-gradient(
@@ -164,25 +163,21 @@ body {
     rgba(0, 0, 0, 0.6) 43.23%,
     rgba(0, 0, 0, 0.8) 65.63%,
     #000 100%
-  ) !important;
+  );
   z-index: 1;
   bottom: -1px;
 }
 
 .slide {
-  display: inline-block; /* No need for this */
-  width: 100%; /* Set width of each slide */
+  width: 100%;
   height: 100vh;
   border-radius: 10px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: none;
 }
 
 .slide.active {
-  display: block; /* Ensure active slide is visible */
-}
-
-.slide {
-  display: none;
+  display: block;
 }
 
 .slide img {
@@ -192,11 +187,11 @@ body {
 }
 
 .movie-details {
-  z-index: 2;
   position: absolute;
   top: 35%;
   left: 10%;
   color: #fff;
+  z-index: 2;
 }
 
 .movie-details h1 {
@@ -209,11 +204,13 @@ body {
   width: 50%;
   text-align: justify;
 }
+
 .movie-details ul {
   margin-top: 10px;
   display: flex;
   justify-content: flex-end;
 }
+
 .movie-details ul li {
   margin-right: 40px;
   font-weight: 700;
@@ -225,6 +222,34 @@ body {
   margin-top: 60px;
 }
 
+/* Slick Dots Styles */
+.slick-dots {
+  position: absolute;
+  bottom: 12%;
+  right: 8%;
+}
+
+.slick-dots ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.dot {
+  width: 30px;
+  height: 5px;
+  border-radius: 10px;
+  background-color: #fff; /* Inactive dot color */
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.dot.slick-active {
+  background-color: rgb(255, 252, 252); /* Active dot color */
+}
+
+/* Slide buttons and hero section content styles */
 .slide-btns {
   width: 100%;
   display: flex;
@@ -268,7 +293,8 @@ body {
   height: 30px;
 }
 
-.add-list {
+.add-list,
+.share-btn {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -291,17 +317,6 @@ body {
   font-size: 18px;
   font-weight: 600;
   padding: 10px 35px;
-}
-
-.share-btn {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-  color: #fff;
-  border: none;
 }
 
 /* movie-cards */
