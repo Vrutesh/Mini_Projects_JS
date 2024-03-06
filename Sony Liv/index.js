@@ -1,4 +1,39 @@
 // hero-banner slider
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll(".slide");
+  const dots = document.querySelectorAll(".slick-dots li");
+
+  // Set the initial dot color
+  dots[0].style.backgroundColor = "white";
+  dots[0].style.width = "40px";
+
+  // Add click event listeners to slide buttons
+  const slideButtons = document.querySelectorAll(".slide-btns button");
+  slideButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      // Find the index of the current active slide
+      let currentIndex;
+      slides.forEach(function (slide, index) {
+        if (slide.classList.contains("active")) {
+          currentIndex = index;
+        }
+      });
+
+      // Update dot colors based on the current active slide index
+      dots.forEach(function (dot, index) {
+        if (index === currentIndex) {
+          dot.style.backgroundColor = "white"; // Change color of current dot
+          dot.style.width = "40px";
+        } else {
+          dot.style.backgroundColor = "gray"; // Reset color of other dots
+          dot.style.width = "";
+        }
+      });
+    });
+  });
+});
+
+
 
 let next_btn = document.querySelector(".next-button");
 let previous_btn = document.querySelector(".prev-btn");
@@ -10,20 +45,12 @@ const next_Slide = () => {
   currentSlide = [currentSlide + 1] % slides.length;
   slides[currentSlide].classList.add("active");
 
-  // if (currentSlide === slides.length - 1) {
-  //   clearInterval(intervalID);
-  //   next_btn.style.opacity = "0.5";
-  //   next_btn.style.cursor = "not-allowed";
-  //   next_btn.removeEventListener("click", next);
-  // }
   if (currentSlide >= 0) {
     previous_btn.style.opacity = "1";
     previous_btn.style.cursor = "pointer";
     previous_btn.addEventListener("click", previous);
   }
 };
-
-// const intervalID = setInterval(next_Slide, 4000);
 
 const previous_Slide = () => {
   slides[currentSlide].classList.remove("active");
@@ -35,12 +62,6 @@ const previous_Slide = () => {
     next_btn.style.cursor = "pointer";
     next_btn.addEventListener("click", next);
   }
-
-  // if (currentSlide === 0) {
-  //   previous_btn.style.opacity = "0.5";
-  //   previous_btn.style.cursor = "not-allowed";
-  //   previous_btn.removeEventListener("click", previous);
-  // }
 };
 
 const next = () => {
@@ -55,12 +76,6 @@ const previous = () => {
 
 next_btn.addEventListener("click", next);
 previous_btn.addEventListener("click", previous);
-
-// if (currentSlide === 0) {
-//   previous_btn.style.opacity = "0.5";
-//   previous_btn.style.cursor = "not-allowed";
-//   previous_btn.removeEventListener("click", previous);
-// }
 
 // fetch data
 const API_KEY = "f3fbd38c0c00cefd4bd7ffeb48aa7a17";
@@ -229,3 +244,41 @@ fetch(topratedURL)
   .catch((error) => {
     console.error("There was a problem with the fetch operation:", error);
   });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const contents = document.querySelectorAll(".content");
+  const nextBtns = document.querySelectorAll(".card-next-btn");
+
+  contents.forEach(function (content) {
+    const cardsContainer = content;
+    const cards = content.querySelectorAll(".card");
+    const nextBtn = content.querySelector(".card-next-btn");
+
+    content.addEventListener("mouseenter", function () {
+      nextBtn.style.display = "block";
+    });
+
+    content.addEventListener("mouseleave", function () {
+      nextBtn.style.display = "none";
+    });
+
+    nextBtn.addEventListener("click", function () {
+      const lastCard = cards[cards.length - 1];
+      const containerWidth = cardsContainer.offsetWidth;
+      const lastCardWidth = lastCard.offsetWidth;
+      const cardsTotalWidth = lastCard.offsetLeft + lastCardWidth;
+      const scrollDistance = cardsTotalWidth - containerWidth;
+
+      cardsContainer.scrollTo({
+        left: scrollDistance,
+        behavior: "smooth",
+      });
+      console.log("Scroll Distance:", scrollDistance);
+
+      // Hide the next button after scrolling
+      nextBtn.style.display = "none";
+    });
+  });
+});
+
+

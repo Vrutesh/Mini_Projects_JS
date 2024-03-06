@@ -10,11 +10,11 @@
 /* Scrollbar styles */
 ::-webkit-scrollbar {
   width: 10px;
-  background: #333;
+  background: #181818;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #535353;
+  background: #262626;
   border-radius: 5px;
 }
 
@@ -24,7 +24,7 @@
 
 /* Body styles */
 body {
-  background-color: #000000;
+  background-color: #151515;
 }
 
 /* Navigation styles */
@@ -66,8 +66,9 @@ body {
   height: 25px;
   border: none;
   font-size: 12px;
-  padding: 10px 5px;
+  padding: 8px 5px;
   cursor: pointer;
+  border-radius: 2px;
 }
 
 .header_logo {
@@ -117,6 +118,7 @@ body {
 }
 
 .nav-profile {
+  height: 100%;
   display: flex;
   flex-flow: row;
   justify-content: flex-end;
@@ -142,7 +144,7 @@ body {
 .container {
   width: 100%;
   height: 100vh;
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
   position: relative; /* Added position relative */
 }
 
@@ -156,7 +158,7 @@ body {
 .masthead-gradient {
   position: absolute;
   width: 100%;
-  height: calc(40.625% - 39px);
+  height: calc(30.625% - 39px);
   background-image: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0) 0%,
@@ -174,6 +176,7 @@ body {
   border-radius: 10px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   display: none;
+  cursor: pointer;
 }
 
 .slide.active {
@@ -184,6 +187,34 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Slick Dots Styles */
+.slick-dots {
+  position: absolute;
+  bottom: 12%;
+  right: 8%;
+}
+
+.slick-dots ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.dot {
+  width: 25px;
+  height: 5px;
+  border-radius: 10px;
+  background-color: rgb(181, 181, 181);
+  margin: 0 5px;
+  cursor: pointer;
+  cursor: pointer;
+}
+
+.dot.slick-active {
+  background-color: rgb(255, 255, 255);
 }
 
 .movie-details {
@@ -220,33 +251,6 @@ body {
   display: flex;
   margin-left: 20px;
   margin-top: 60px;
-}
-
-/* Slick Dots Styles */
-.slick-dots {
-  position: absolute;
-  bottom: 12%;
-  right: 8%;
-}
-
-.slick-dots ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-}
-
-.dot {
-  width: 30px;
-  height: 5px;
-  border-radius: 10px;
-  background-color: #fff; /* Inactive dot color */
-  margin: 0 5px;
-  cursor: pointer;
-}
-
-.dot.slick-active {
-  background-color: rgb(255, 252, 252); /* Active dot color */
 }
 
 /* Slide buttons and hero section content styles */
@@ -303,6 +307,7 @@ body {
   background-color: transparent;
   color: #fff;
   border: none;
+  cursor: pointer;
 }
 
 .play-btn {
@@ -317,32 +322,23 @@ body {
   font-size: 18px;
   font-weight: 600;
   padding: 10px 35px;
+  cursor: pointer;
 }
 
 /* movie-cards */
 .card-container {
   margin-bottom: 44px;
-  padding-left: 90px;
   padding-top: 16px;
   padding-bottom: 16px;
   white-space: nowrap;
   overflow-x: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  position: relative;
 }
 
 .card-container::-webkit-scrollbar {
   display: none;
-}
-
-.card-previous-btn {
-  width: 90px;
-  position: relative;
-  margin-right: 30px;
-  height: 300px;
-  background-color: rgba(0, 0, 0, 0.9);
-  border: none;
-  z-index: 2;
 }
 
 .card-container > h3 {
@@ -351,18 +347,39 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  padding-left: 100px;
+  /* z-index: 10; */
+}
+
+.gradient {
+  content: "";
+  position: absolute;
+  top: 0; /* Adjust top position based on the height of h3 and its margin */
+  left: 0;
+  width: 2430px;
+  height: calc(100% - 35.625% - 39px); /* Adjust height as needed */
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.982) 65.63%,
+    rgba(20, 20, 20, 0) 100%,
+    rgba(0, 0, 0, 0.793) 43.23%,
+    #000 0%
+  );
+  z-index: -1;
 }
 
 .content {
   display: inline-block;
   white-space: nowrap;
   position: relative;
+  padding-left: 100px;
 }
 .card {
   display: inline-block;
   border-radius: 40px;
   height: 270px;
-  margin-right: 15px;
+  margin-right: 25px;
+  cursor: pointer;
 }
 
 .card img {
@@ -377,19 +394,28 @@ body {
   transform: scale(1.15);
 }
 
-.card-btn {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.card-btn > button {
-  width: 100px;
-  height: 270px;
-  background-color: rgba(0, 0, 0, 0.9);
+.card-previous-btn {
+  display: none;
+  width: 90px;
+  height: 240px;
+  background-color: rgba(7, 7, 7, 0.7);
   border: none;
   position: absolute;
-  top: 0;
+  top: 7%;
+  left: 0;
+  z-index: 2;
+}
+
+.card-next-btn {
+  display: none;
+  width: 90px;
+  height: 240px;
+  background-color: rgba(10, 10, 10, 0.7);
+  border: none;
+  position: absolute;
+  top: 7%;
+  right: 0;
+  z-index: 2;
 }
 
 /* video container */
@@ -399,7 +425,6 @@ body {
   height: calc(100vw * 0.17569);
   position: relative;
   border-radius: 0.625em;
-
   background-position: center;
   background-size: cover;
   display: flex;
@@ -415,6 +440,7 @@ body {
   left: 3%;
   height: 100%;
   width: calc(76.263vw * 0.4099);
+  cursor: pointer;
 }
 
 .trailer-video {
@@ -423,6 +449,7 @@ body {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   border: none;
+  cursor: pointer;
 }
 
 .poster-container img {
@@ -430,4 +457,93 @@ body {
   width: 100%;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  cursor: pointer;
+}
+
+/* footer */
+footer {
+  background-color: #111111;
+  color: #fff;
+}
+
+.footer-container {
+  padding: 40px 50px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-menu {
+  flex: 0 0 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.footer-menu ul {
+  list-style-type: none;
+}
+
+.footer-menu ul li {
+  margin-bottom: 10px;
+}
+
+.footer-menu-title {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.footer-menu-subtitle {
+  font-size: 0.85rem;
+  color: #888;
+  cursor: pointer;
+}
+.legal {
+  margin: 12px 10px 4px 0;
+}
+
+.legal ul {
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.legal-title {
+  list-style-type: none;
+}
+
+.legal ul li {
+  font-size: 0.8rem;
+}
+
+.legal-copyright {
+  margin: 30px 226px 0 0;
+  cursor: pointer;
+}
+
+.legal-copyright p {
+  color: #848484;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.social-appdownload {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.social-media-heading {
+  margin-bottom: 10px;
+}
+
+.social-media-heading p {
+  font-size: 0.8rem;
+}
+
+.social-media-icon img {
+  padding-right: 5px;
+  cursor: pointer;
 }
