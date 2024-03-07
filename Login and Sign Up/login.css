@@ -154,6 +154,12 @@ main {
   color: var(--primary-text-color);
 }
 
+.input-container .email-error{
+  color: red;
+  /* text-align: center; */
+  margin-top: 10px;
+}
+
 .input-field-btn {
   display: flex;
   justify-content: center;
