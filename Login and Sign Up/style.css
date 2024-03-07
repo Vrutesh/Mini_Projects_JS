@@ -16,12 +16,41 @@ body{
     background-color: #0b0b0b;
 }
 
+section{
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 20px 0 0;
+}
+
+section span{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: inset #575757 0 0 0 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .4s;
+}
+
+section span:hover{
+    transform: scale(1.05);
+}
+section span:active{
+    transform: scale(0.95);
+}
+
+section span img{
+    width: 30px;
+    height: 30px;
+}
+
 main{
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     margin: auto;
 }
 
@@ -60,6 +89,7 @@ main{
     align-items: center;
     cursor: pointer;
     transition: .4s;
+    font-size: 1rem;
 }
 
 .signup-social button:hover{
@@ -134,7 +164,7 @@ main{
     justify-content: center;
 }
 
-.signup-input-field button{
+.input-field-btn button{
     padding: 12px 40px;
     border-radius: 12px;
     background-color: #2563EB;
@@ -145,11 +175,11 @@ main{
     transition: .4s;
 }
 
-.signup-input-field button:hover{
+.input-field-btn button:hover{
     transform: scale(1.05);
 }
 
-.signup-input-field button:active{
+.input-field-btn button:active{
     transform: scale(0.95);
 }
 
@@ -157,6 +187,12 @@ main{
     display: flex;
     justify-content: center;
     color: #999;
+}
+
+.login-msg span{
+    cursor: pointer;
+    color: #2563EB;
+    padding-left: 4px;
 }
 
 .login-msg span:hover{
