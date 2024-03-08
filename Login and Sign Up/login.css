@@ -26,7 +26,11 @@ section span{
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  box-shadow: inset #575757 0 0 0 2px;
+  outline: none;
+  border: none;
+  box-shadow: #477df2 1px 1px 30px 1px;
+  /* box-shadow: inset #575757 0 0 0 2px; */
+  background-color: var(--primary-text-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -154,11 +158,14 @@ main {
   color: var(--primary-text-color);
 }
 
-.input-container .email-error{
+.input-container .error-message{
   color: red;
-  /* text-align: center; */
+  width: 320px;
+  text-align: justify;
   margin-top: 10px;
 }
+
+
 
 .input-field-btn {
   display: flex;

@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
-<body>
+
+<body class="content">
     <section>
-        <span><img src="assets/moon-icon.svg" alt="moon-icon"></span>
+        <span class="switch-theme"><img src="assets/sun-icon.svg" class="switch" alt="moon-icon"></span>
     </section>
-    <span></span>
     <main>
         <div class="container">
-             <div class="signup-headings">
+            <div class="signup-headings">
                 <h1>Create an account</h1>
                 <p>Sign up with</p>
-             </div>
-             <div class="signup-social">
+            </div>
+            <div class="signup-social">
                 <button>
                     <img src="assets/google-icon.svg" alt="google-icon">
                     Google
@@ -29,32 +32,34 @@
                     <img src="assets/facebook-icon.svg" alt="facebook-icon">
                     Facebook
                 </button>
-             </div>
-             <div class="signup-input-field">
+            </div>
+            <div class="signup-input-field">
                 <form>
-                <div class="input-container">
-                    <label>Name</label>		
-                    <input type="name" placeholder="Your Name" required/>
-                </div>
-                <div class="input-container">		
-                    <label>Email</label>
-                    <input type="email" placeholder="Your Email" required/>
-                </div>
-                <div class="input-container">		
-                    <label>Password</label>
-                    <input type="password" placeholder="Enter Password" required/>
-                </div>
-                <div class="input-field-btn">
-                    <button class="input-field-btn">Sign Up</button>
-                </div>
-            </form>	
-             </div>
-             <div class="login-msg">
+                    <div class="input-container">
+                        <label>Name</label>
+                        <input type="name" class="name" placeholder="Your Name" required />
+                    </div>
+                    <div class="input-container">
+                        <label>Email</label>
+                        <input type="email" class="email" placeholder="Your Email" required />
+                    </div>
+                    <div class="input-container">
+                        <label>Password</label>
+                        <input type="password" class="password" placeholder="Enter Password" required />
+                    </div>
+                    <div class="add-msg"></div>
+                    <div class="input-field-btn">
+                        <button class="input-field-btn">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+            <div class="login-msg">
                 <p>Already have an account ? <span class="redirect-login">Log in Here</span></p>
-             </div>
+            </div>
         </div>
     </main>
 
     <script src="index.js"></script>
 </body>
+
 </html>

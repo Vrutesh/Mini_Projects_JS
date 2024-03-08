@@ -1,200 +1,223 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: "Exo 2", sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Exo 2", sans-serif;
 }
 
-:root{
-    --primary-text-color : #fff;
-    --secondary-text-color : #000;
-    --bg-color : #000;
+:root {
+  --primary-text-color: #fff;
+  --secondary-text-color: #000;
+  --bg-color: #000;
 }
 
-body{
-    background-color: #0b0b0b;
+body {
+  background-color: #0b0b0b;
 }
 
-section{
-    display: flex;
-    justify-content: flex-end;
-    margin: 20px 20px 0 0;
+section {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 20px 0 0;
 }
 
-section span{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    box-shadow: inset #575757 0 0 0 2px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: .4s;
+section span {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  box-shadow: #477df2 1px 1px 30px 1px;
+  /* box-shadow: inset #575757 0 0 0 2px; */
+  background-color: var(--primary-text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
 }
 
-section span:hover{
-    transform: scale(1.05);
+section span:hover {
+  transform: scale(1.05);
 }
-section span:active{
-    transform: scale(0.95);
-}
-
-section span img{
-    width: 30px;
-    height: 30px;
+section span:active {
+  transform: scale(0.95);
 }
 
-main{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    margin: auto;
+section span img {
+  width: 30px;
+  height: 30px;
 }
 
-.container{
-    display: flex;
-    flex-direction: column;
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  margin: auto;
 }
 
-.signup-headings h1{
-    font-size: 3rem;
-    padding: 30px 0;
-    color: var(--primary-text-color);
+.container {
+  display: flex;
+  flex-direction: column;
 }
 
-.signup-headings p{
-    text-align: center;
-    font-size: 1rem;
-    padding-bottom: 15px;
-    color: #999;
+.signup-headings h1 {
+  font-size: 3rem;
+  padding: 30px 0;
+  color: var(--primary-text-color);
 }
 
-.signup-social{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+.signup-headings p {
+  text-align: center;
+  font-size: 1rem;
+  padding-bottom: 15px;
+  color: #999;
 }
 
-.signup-social button{
-    background-color: #272832;
-    color: var(--primary-text-color);
-    border: none;
-    border-radius: 10px;
-    padding: 10px 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: .4s;
-    font-size: 1rem;
+.signup-social {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-.signup-social button:hover{
-    transform: scale(1.05);
+.signup-social button {
+  background-color: #272832;
+  color: var(--primary-text-color);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.4s;
+  font-size: 1rem;
 }
 
-.signup-social button:active{
-    transform: scale(0.95);
+.signup-social button:hover {
+  transform: scale(1.05);
 }
 
-.signup-social button img{
-    width: 35px;
-    height: 35px;
-    padding-right: 10px;
+.signup-social button:active {
+  transform: scale(0.95);
 }
 
-.signup-input-field{
-    padding: 30px 0;
+.signup-social button img {
+  width: 35px;
+  height: 35px;
+  padding-right: 10px;
 }
 
-
-.input-container{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
+.signup-input-field {
+  padding: 30px 0;
 }
 
-.input-container label{
-    color: var(--primary-text-color);
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 
-.input-container input{
-    box-shadow: inset #575757 0 0 0 2px;
-    border: 0;
-    background: rgba(0, 0, 0, 0);
-    appearance: none;
-    width: 100%;
-    position: relative;
-    border-radius: 10px;
-    padding: 25px 12px;
-    line-height: 1.4;
-    color: rgb(255, 255, 255);
-    font-size: 16px;
-    font-weight: 400;
-    height: 40px;
-    transition: all .2s ease;
-    margin-top: 10px;
+.input-container label {
+  color: var(--primary-text-color);
 }
 
-.input-container input:hover{    
-        box-shadow: 0 0 0 0 #fff inset, #2563EB 0 0 0 2px;
-        /* background-color: var(--bg-color); */
-        color: var(--primary-text-color);
-    }
-    
-    .input-container input:hover:focus{
-        /* background: #fff; */
-        outline: 0;
-        box-shadow: 0 0 0 0 #fff inset, #2563EB 0 0 0 3px;
-        color: var(--primary-text-color);
-    }
-    
-    .input-container input:hover:focus:active{
-        box-shadow: 0 0 0 0 #fff inset, #2563EB 0 0 0 3px;
-        /* background-color: var(--bg-color); */
-        color: var(--primary-text-color);
-
+.input-container input {
+  box-shadow: inset #575757 0 0 0 2px;
+  border: 0;
+  background: rgba(0, 0, 0, 0);
+  appearance: none;
+  width: 100%;
+  position: relative;
+  border-radius: 10px;
+  padding: 25px 12px;
+  line-height: 1.4;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-weight: 400;
+  height: 40px;
+  transition: all 0.2s ease;
+  margin-top: 10px;
 }
 
-.input-field-btn{
-    display: flex;
-    justify-content: center;
+.input-container input:hover {
+  box-shadow: 0 0 0 0 #fff inset, #2563eb 0 0 0 2px;
+  color: var(--primary-text-color);
 }
 
-.input-field-btn button{
-    padding: 12px 40px;
-    border-radius: 12px;
-    background-color: #2563EB;
-    color: var(--primary-text-color);
-    outline: 0;
-    border: 0;
-    font-size: 1.2rem;
-    transition: .4s;
+.input-container input:hover:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0 #fff inset, #2563eb 0 0 0 3px;
+  color: var(--primary-text-color);
 }
 
-.input-field-btn button:hover{
-    transform: scale(1.05);
+.input-container input:hover:focus:active {
+  box-shadow: 0 0 0 0 #fff inset, #2563eb 0 0 0 3px;
+  color: var(--primary-text-color);
 }
 
-.input-field-btn button:active{
-    transform: scale(0.95);
+.input-container .error-message {
+  color: red;
+  width: 400px;
+  text-align: justify;
+  margin-top: 10px;
 }
 
-.login-msg{
-    display: flex;
-    justify-content: center;
-    color: #999;
+.add-msg {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 5px 0 20px 0;
 }
 
-.login-msg span{
-    cursor: pointer;
-    color: #2563EB;
-    padding-left: 4px;
+.success-msg {
+  background-color: springgreen;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: var(--primary-text-color);
+  font-weight: 550;
+  padding: 10px 0;
+  width: 200px;
 }
 
-.login-msg span:hover{
-    text-decoration: underline;
+.input-field-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.input-field-btn button {
+  padding: 12px 40px;
+  border-radius: 12px;
+  background-color: #2563eb;
+  color: var(--primary-text-color);
+  outline: 0;
+  border: 0;
+  font-size: 1.2rem;
+  transition: 0.4s;
+}
+
+.input-field-btn button:hover {
+  transform: scale(1.05);
+}
+
+.input-field-btn button:active {
+  transform: scale(0.95);
+}
+
+.login-msg {
+  display: flex;
+  justify-content: center;
+  color: #999;
+}
+
+.login-msg span {
+  cursor: pointer;
+  color: #2563eb;
+  padding-left: 4px;
+}
+
+.login-msg span:hover {
+  text-decoration: underline;
 }
