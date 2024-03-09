@@ -56,7 +56,7 @@ const validation = () => {
       localStorage.setItem("email", email.value);
       localStorage.setItem("password", password.value);
       // Redirect to login.html
-      window.location.href = "www.google.com";
+      window.location.href = "home.html";
     }
   });
 };
