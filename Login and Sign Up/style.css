@@ -8,6 +8,7 @@
 
 :root {
   --primary-text-color: #fff;
+  --primary-color: #2563eb;
   --secondary-text-color: #000;
   --bg-color: #000;
 }
@@ -54,7 +55,6 @@ main {
   height: 100vh;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   margin: auto;
 }
 
@@ -143,18 +143,18 @@ main {
 }
 
 .input-container input:hover {
-  box-shadow: 0 0 0 0 #fff inset, #2563eb 0 0 0 2px;
+  box-shadow: 0 0 0 0 #fff inset, var(--primary-color) 0 0 0 2px;
   color: var(--primary-text-color);
 }
 
 .input-container input:hover:focus {
   outline: 0;
-  box-shadow: 0 0 0 0 #fff inset, #2563eb 0 0 0 3px;
+  box-shadow: 0 0 0 0 #fff inset, var(--primary-color) 0 0 0 3px;
   color: var(--primary-text-color);
 }
 
 .input-container input:hover:focus:active {
-  box-shadow: 0 0 0 0 #fff inset, #2563eb 0 0 0 3px;
+  box-shadow: 0 0 0 0 #fff inset, var(--primary-color) 0 0 0 3px;
   color: var(--primary-text-color);
 }
 
@@ -190,9 +190,8 @@ main {
 .input-field-btn button {
   padding: 12px 40px;
   border-radius: 12px;
-  background-color: #2563eb;
+  background-color: var(--primary-color);
   color: var(--primary-text-color);
-  outline: 0;
   border: 0;
   font-size: 1.2rem;
   transition: 0.4s;
@@ -210,14 +209,22 @@ main {
   display: flex;
   justify-content: center;
   color: #999;
+  margin-bottom: 20px;
 }
 
 .login-msg span {
   cursor: pointer;
-  color: #2563eb;
+  color: var(--primary-color);
   padding-left: 4px;
 }
 
 .login-msg span:hover {
   text-decoration: underline;
+}
+
+.copyrights {
+  width: 400px;
+  color: #999;
+  text-align: center;
+  padding-bottom: 20px;
 }

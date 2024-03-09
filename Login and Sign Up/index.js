@@ -7,6 +7,7 @@ document.querySelector(".redirect-login").addEventListener("click", () => {
 let body = document.querySelector(".content");
 let signup_heading = document.querySelector(".signup-headings h1");
 let input_field_label = document.querySelectorAll(".input-container label");
+let input_field_input = document.querySelectorAll(".input-container input");
 
 let isLightTheme = true; // Flag to track current theme state
 
@@ -19,6 +20,9 @@ document.querySelector(".switch-theme").addEventListener("click", () => {
     signup_heading.style.color = "#000";
     input_field_label.forEach((label) => {
       label.style.color = "#000";
+    });
+    input_field_input.forEach((input) => {
+      input.style.color = "#000";
     });
   } else {
     // Switch to light theme (default)
@@ -55,27 +59,37 @@ const validation = () => {
     validateEmail(email, email_error);
     validatePassword(password, password_error);
 
-    // If all fields are valid, save data to localStorage
-    let users = [{}];
+    let users = JSON.parse(localStorage.getItem("users")) || [];
 
-    if (
-      name_error.textContent === "" &&
-      email_error.textContent === "" &&
-      password_error.textContent === ""
-    ) {
-      localStorage.setItem("name", name.value);
-      localStorage.setItem("email", email.value);
-      localStorage.setItem("password", password.value);
+    // Check if email already exists
+    let emailExists = users.some((user) => user.email === email.value);
 
-      let successfull_msg = document.createElement("p");
-      successfull_msg.classList.add("success-msg");
-      successfull_msg.textContent = "Registration successful !";
-      add_msg.appendChild(successfull_msg);
+    if (name_error.textContent === "" && password_error.textContent === "") {
+      if (emailExists) {
+        // If email already exists
+        email_error.textContent = "Email already registered";
+      } else {
+        // Create a new user object
+        let newUser = {
+          name: name.value,
+          email: email.value,
+          password: password.value,
+        };
 
-      setTimeout(() => {
-        add_msg.removeChild(successfull_msg);
-        window.location.href = "login.html";
-      }, 1000);
+        users.push(newUser); // Add new user to the array
+
+        localStorage.setItem("users", JSON.stringify(users)); // Save the updated user array to localStorage
+
+        let successfull_msg = document.createElement("p");
+        successfull_msg.classList.add("success-msg");
+        successfull_msg.textContent = "Registration successful !";
+        add_msg.appendChild(successfull_msg);
+
+        setTimeout(() => {
+          add_msg.removeChild(successfull_msg);
+          window.location.href = "login.html";
+        }, 1000);
+      }
     }
   });
 };
@@ -123,9 +137,5 @@ const validatePassword = (passwordInput, errorElement) => {
     passwordInput.style.boxShadow = "0 0 0 0 #fff inset, springgreen 0 0 0 2px";
   }
 };
-
-//   name.value =''
-//   email.value =''
-//   password.value =''
 
 validation();

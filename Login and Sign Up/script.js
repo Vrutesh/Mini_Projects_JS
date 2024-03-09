@@ -5,36 +5,37 @@ document.querySelector(".redirect-signup").addEventListener("click", () => {
 let body = document.querySelector(".content");
 let login_heading = document.querySelector(".login-headings h1");
 let input_field_label = document.querySelectorAll(".input-container label");
-// let input_field_input = document.querySelectorAll(".input-container input");
+let input_field_input = document.querySelectorAll(".input-container input");
 
-let isLightTheme = true; // Flag to track current theme state
+let isLightTheme = true;
 
 document.querySelector(".switch-theme").addEventListener("click", () => {
-    console.log("click")
+  console.log("click");
   if (isLightTheme) {
     // Switch to dark theme
-    // input_field_input.style.color="#000"
     document.querySelector(".switch").src = "assets/moon-icon.svg";
     body.style.background = "#fff";
     login_heading.style.color = "#000";
     input_field_label.forEach((label) => {
       label.style.color = "#000";
     });
+    input_field_input.forEach((input) => {
+      input.style.color = "#000";
+    });
   } else {
     // Switch to light theme (default)
     document.querySelector(".switch").src = "assets/sun-icon.svg";
     document.querySelector(".switch").style.color = "#000";
-    // input_field_input.style.color="#000"
     body.style.background = "#000";
     login_heading.style.color = "#fff";
     input_field_label.forEach((label) => {
       label.style.color = "#fff";
     });
   }
-  
-  // Toggle theme state
-  isLightTheme ? isLightTheme = false : isLightTheme = true;});
 
+  // Toggle theme state
+  isLightTheme ? (isLightTheme = false) : (isLightTheme = true);
+});
 
 const validation = () => {
   const input_container = document.querySelectorAll(".input-container");
@@ -50,17 +51,13 @@ const validation = () => {
 
     validateEmail(email, email_error);
     validatePassword(password, password_error);
-    if (
-      email_error.textContent === "" &&
-      password_error.textContent === ""
-    ) {
+    if (email_error.textContent === "" && password_error.textContent === "") {
       // Store email and password in localStorage
-      localStorage.setItem('email', email.value);
-      localStorage.setItem('password', password.value);
+      localStorage.setItem("email", email.value);
+      localStorage.setItem("password", password.value);
       // Redirect to login.html
-      window.location.href = 'www.google.com';
+      window.location.href = "www.google.com";
     }
-    
   });
 };
 
