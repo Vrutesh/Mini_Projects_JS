@@ -164,6 +164,23 @@ main {
   margin-top: 10px;
 }
 
+.add-msg {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 5px 0 20px 0;
+}
+
+.success-msg {
+  background-color: springgreen;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: var(--primary-text-color);
+  font-weight: 550;
+  padding: 10px 0;
+  width: 200px;
+}
+
 .input-field-btn {
   display: flex;
   justify-content: center;

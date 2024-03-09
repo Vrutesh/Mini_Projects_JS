@@ -42,6 +42,7 @@ document.querySelector(".switch-theme").addEventListener("click", () => {
 
 const validation = () => {
   const input_container = document.querySelectorAll(".input-container");
+  let add_msg = document.querySelector(".add-msg");
   const email = document.querySelector("#email-field");
   const password = document.querySelector("#password-field");
   const login_btn = document.querySelector(".input-field-btn");
@@ -58,8 +59,17 @@ const validation = () => {
       // Store email and password in localStorage
       localStorage.setItem("email", email.value);
       localStorage.setItem("password", password.value);
+
+      let successfull_msg = document.createElement("p");
+      successfull_msg.classList.add("success-msg");
+      successfull_msg.textContent = "You are now Logged In !";
+      add_msg.appendChild(successfull_msg);
+
       // Redirect to login.html
-      window.location.href = "home.html";
+      setTimeout(() => {
+        add_msg.removeChild(successfull_msg);
+        window.location.href = "home.html";
+      }, 1000);
     }
   });
 };
