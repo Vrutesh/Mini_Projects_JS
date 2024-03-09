@@ -33,6 +33,9 @@ document.querySelector(".switch-theme").addEventListener("click", () => {
     input_field_label.forEach((label) => {
       label.style.color = "#fff";
     });
+    input_field_input.forEach((input) => {
+      input.style.color = "#fff";
+    });
   }
 
   // Toggle theme state

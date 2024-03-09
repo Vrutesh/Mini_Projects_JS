@@ -134,7 +134,7 @@ main {
   border-radius: 10px;
   padding: 25px 12px;
   line-height: 1.4;
-  color: rgb(255, 255, 255);
+  color: var(--primary-text-color);
   font-size: 16px;
   font-weight: 400;
   height: 40px;
